@@ -23,18 +23,15 @@ class PaginatorButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1,
-      child: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: TextButton(
-          onPressed: onPressed,
-          style: TextButton.styleFrom(
-            shape: InheritedNumberPaginator.of(context).config.buttonShape ??
-                const CircleBorder(),
-            backgroundColor: _backgroundColor(context, selected),
-            foregroundColor: _foregroundColor(context, selected),
-          ),
-          child: child,
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          shape: InheritedNumberPaginator.of(context).config.buttonShape ??
+              const CircleBorder(),
+          backgroundColor: _backgroundColor(context, selected),
+          foregroundColor: _foregroundColor(context, selected),
         ),
+        child: child,
       ),
     );
   }

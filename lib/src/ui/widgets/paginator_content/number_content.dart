@@ -76,7 +76,6 @@ class NumberContent extends StatelessWidget {
         aspectRatio: 1,
         child: Container(
           // padding: const EdgeInsets.all(4.0),
-          margin: const EdgeInsets.all(4.0),
           alignment: Alignment.bottomCenter,
           decoration: ShapeDecoration(
             shape: InheritedNumberPaginator.of(context).config.buttonShape ??
