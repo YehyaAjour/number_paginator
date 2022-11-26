@@ -10,6 +10,8 @@ typedef NumberPaginatorContentBuilder = Widget Function(int index);
 
 /// The main widget used for creating a [NumberPaginator].
 class NumberPaginator extends StatefulWidget {
+  final Widget? backWidget;
+  final Widget? nextWidget;
   /// Total number of pages that should be shown.
   final int numberPages;
 
@@ -32,6 +34,8 @@ class NumberPaginator extends StatefulWidget {
   /// Creates an instance of [NumberPaginator].
   const NumberPaginator({
     Key? key,
+    this.backWidget,
+    this.nextWidget,
     required this.numberPages,
     this.initialPage = 0,
     this.onPageChange,
@@ -74,14 +78,14 @@ class NumberPaginatorState extends State<NumberPaginator> {
           children: [
             PaginatorButton(
               onPressed: _controller.currentPage > 0 ? _controller.prev : null,
-              child: const Icon(Icons.chevron_left),
+              child: widget.backWidget!,
             ),
             ..._buildCenterContent(),
             PaginatorButton(
               onPressed: _controller.currentPage < widget.numberPages - 1
                   ? _controller.next
                   : null,
-              child: const Icon(Icons.chevron_right),
+              child: widget.nextWidget!,
             ),
           ],
         ),
