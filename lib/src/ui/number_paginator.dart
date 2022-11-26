@@ -80,7 +80,7 @@ class NumberPaginatorState extends State<NumberPaginator> {
               onPressed: _controller.currentPage > 0 ? _controller.prev : null,
               child: widget.backWidget!,
             ),
-            // ..._buildCenterContent(),
+            ..._buildCenterContent(),
             PaginatorButton(
               onPressed: _controller.currentPage < widget.numberPages - 1
                   ? _controller.next
