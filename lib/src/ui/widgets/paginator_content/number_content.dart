@@ -68,7 +68,7 @@ class NumberContent extends StatelessWidget {
             InheritedNumberPaginator.of(context).onPageChange?.call(index),
         selected: _selected(index),
         child:
-            AutoSizeText((index + 1).toString(), maxLines: 1, minFontSize: 5),
+            AutoSizeText((index + 1).toString(), maxLines: 1, minFontSize: 2),
       );
 
   Widget _buildDots(BuildContext context) => AspectRatio(
